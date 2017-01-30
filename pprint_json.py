@@ -1,7 +1,6 @@
 import json
 from os import path
 from sys import argv
-from pprint import PrettyPrinter
 
 
 def load_data(filepath):
@@ -12,8 +11,7 @@ def load_data(filepath):
 
 
 def pretty_print_json(data):
-    pp = PrettyPrinter(indent=4, width=120, depth=None, compact=True)
-    return pp.pprint(data)
+    return json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)
 
 
 if __name__ == '__main__':
